@@ -1,397 +1,156 @@
-<html lang="pl"><head><style>
-    
-body {
-    background-color: #121212;
-    color: #fff;
-    margin-top: 10px;
-}
-.sidebar {
-    background-color: #b71c1c;
-    position: fixed;
-    top: 5px;
-    left: 10px;
-    height: calc(100vh - 10px);
-    width: 250px;
-    padding-top: 20px;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-.sidebar .nav-link {
-    color: #fff;
-    display: flex;
-    align-items: center;
-}
-.sidebar .nav-link i {
-    margin-right: 10px;
-}
-.sidebar .nav-link:hover {
-    background-color: #e53935;
-}
-.content {
-    margin-left: 270px;
-    padding: 20px;
-}
-.collapse:not(.show) {
-    display: block;
-    height: 0;
-    overflow: hidden;
-    transition: height 0.4s ease;
-}
-.collapse.show {
-    height: auto;
-    transition: height 0.4s ease;
-}
-.sidebar-hidden {
-    transform: translateX(-260px);
-}
-.navbar-toggler {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    z-index: 1100;
-    background: none;
-    border: none;
-    outline: none;
-}
-.navbar-toggler-icon-container {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    text-align: center;
-}
-.material-icons {
-    transition: transform 0.3s ease;
-}
-.arrow-right {
-    transform: rotate(0deg);
-}
-.arrow-left {
-    transform: rotate(180deg);
-}
-
-.title{
-    text-align: center;
-}
-.logout-icon{
-    background-color: rgba(0, 0, 0, 0.2);
-    padding: 5px;
-    border-radius: 10px;
-}
-.burger{
-    position: fixed;
-    padding: 8px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-}
-.logo{
-    position: relative;
-    left: 30px;
-    top: 20px;
-}
-.collapse-inner{
-    margin-left: 10px;
-}
-body {
-    background-color: #121212;
-    color: #fff;
-    margin-top: 10px;
-}
-
-.sidebar {
-    background-color: #b71c1c;
-    position: fixed;
-    top: 5px;
-    left: 10px;
-    height: calc(100vh - 10px);
-    width: 250px;
-    padding-top: 20px;
-    z-index: 1000;
-    transform: translateX(0);
-    transition: transform 0.3s ease;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.sidebar .nav-link {
-    color: #fff;
-    display: flex;
-    align-items: center;
-}
-
-.sidebar .nav-link i {
-    margin-right: 10px;
-}
-
-.sidebar .nav-link:hover {
-    background-color: #e53935;
-}
-
-.content {
-    margin-left: 270px;
-    padding: 20px;
-}
-
-.collapse-inner {
-    display: none;
-    margin-left: 20px;
-}
-
-.submenu-arrow {
-    transition: transform 0.3s ease;
-}
-
-.hidden {
-    transform: translateX(-260px);
-    transition: transform 0.3s ease;
-}
-
-.burger {
-    position: fixed;
-    padding: 8px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
-    z-index: 1000;
-
-}
-.toggle-sidebar-btn{
-    cursor: pointer;
-    position: absolute;
-    right: -15px;
-    z-index: 1000;
-}
-.logout-menu {
-    background-color: #b71c1c;
-    border-radius: 5px;
-    bottom: calc(100% + 10px);
-    right: 0;
-    z-index: 1000;
-    display: none;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-    padding: 10px 0;
-}
-
-
-.logout-menu a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease;
-}
-
-.logout-menu a:hover {
-    background-color: #e53935;
-}
-
-.logout-btn {
-    margin-bottom: 20px;
-    padding: 10px 20px;
-    width: calc(100% - 20px); 
-    border-radius: 5px;
-    text-align: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-.logout-btn a {
-    color: #fff;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.logout-btn a i {
-    margin-right: 10px;
-}
-.toggle-logout-menu {
-    background-color: #e53935;
-    border-radius: 10px;
-    padding: 8px;
-    cursor: pointer;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-
-
-
-@media (max-width: 768px) {
-    .hidden {
-        transform: translateX(-260px) !important;
-    }
-    .sidebar {
-        transform: translateX(0);
-    }
-    .content {
-        margin-left: 0;
-    }
-    .logout-btn {
-        margin-bottom: 20px;
-        padding: 10px 20px;
-        width: calc(100% - 20px); 
-        border-radius: 5px;
-        text-align: center;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-.kod{
-    background-color: #4b4a0b;
-    width: 170px;
-    border-radius: 10px;
-    padding: 3px;
-}
-.koddiv{
-    font-size: 13px;
-    text-align: center;
-    top: 5px;
-    position: fixed;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-.koddiv a{
-    text-align: center;
-}
-.zielony {
-    color: #28a745;
-    font-weight: bold;
-}
-
-.zolty {
-    color: yellow;
-    font-weight: bold;
-}
-
-.czerwony {
-    color: #E00C00;
-    font-weight: bold;
-}
-
-.czarny {
-    color: black;
-    font-weight: bold;
-}
-</style>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
-<style>[_nghost-ng-c2697620354]{font-family:Open Sans,sans-serif;color:#121212}</style></head><body><div class="sidebar" id="sidebar">
-    <div class="toggle-sidebar-btn" id="toggleSidebar">
-        <i class="material-icons burger">menu</i>
-    </div>
-    <div class="koddiv">
-        <p class="kod">
-            Aktualny kod: <span class="zolty">Zolty</span>
-        </p>
-    </div>
-    <img class="logo" src="../public/SD.png" width="180px" height="180px" alt="SD">
-    <ul class="nav flex-column">
-        <li class="nav-item">
-            <a class="nav-link" href="../index.php">
-                <i class="material-icons">home</i> <span>Strona Główna</span>
-            </a>
-        </li>
-          <li class="nav-item">
-            <a class="nav-link toggle-submenu" href="#aktywnoscSubmenu" role="button">
-                <i class="material-icons">groups</i> <span>Pracownicy</span>
-                <i class="material-icons submenu-arrow" id="arrow1">keyboard_arrow_right</i>
-                </a>
-                <div class="collapse-inner" id="aktywnoscSubmenu" style="display: none;">
-                <a class="nav-link a-link" href="../pracownicy/lista_pracownikow.php"><i class="material-icons">person_add</i> Lista pracowników</a>
-                <a class="nav-link a-link" href="../pracownicy/taryfikator.php"><i class="material-icons">gavel</i> Taryfikator</a>
-                <a class="nav-link a-link" href="../pracownicy/prawa.php"><i class="material-icons">local_police</i> Prawa Podstawowe</a>
-                <a class="nav-link a-link" href="../pracownicy/legalnosc.php"><i class="material-icons">plumbing</i> Legalność Przedmiotów</a>
-                <a class="nav-link a-link" href="../pracownicy/kalkulator.php"><i class="material-icons">calculate</i> Kalkulator</a>
-            </div>
-            
-        </li> 
-            </ul>
-
-    <div class="logout-btn">
-        <div class="toggle-logout-menu" id="toggleLogoutMenu">
-            <span class="logout_login_name">Connor  Shy</span> <i class="material-icons logout-icon">settings</i>
-        </div>
-        <div class="logout-menu" id="logoutMenu" style="display: none;">
-            <a href="../configs/user-settings.php">Zmień dane</a>
-            <a href="../configs/logout.php">Wyloguj</a>
-        </div>
-    </div>
-</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-$(document).ready(function () {
-    const sidebar = $('#sidebar');
-    const toggleButton = $('#toggleSidebar');
-
-    toggleButton.on('click', function () {
-        sidebar.toggleClass('hidden');
-    });
-    $('.toggle-submenu-inner').on('click', function (e) {
-        e.preventDefault();
-        const innerSubmenu = $(this).next('.collapse-inner-inner');
-        const innerArrow = $(this).find('.submenu-arrow');
-
-        // Ukrywanie innych podmenu wewnętrznych oraz resetowanie ich strzałek
-        $('.collapse-inner-inner').not(innerSubmenu).slideUp(300);
-        $('.submenu-arrow').not(innerArrow).removeClass('expanded').html('keyboard_arrow_right');
-
-        // Rozwijanie lub zwijanie wybranego podmenu wewnętrznego i zmiana ikony strzałki
-        innerSubmenu.stop(true, true).slideToggle(300); 
-        innerArrow.toggleClass('expanded').html(innerArrow.hasClass('expanded') ? 'keyboard_arrow_down' : 'keyboard_arrow_right');
-    });
-
-    $('.toggle-submenu').on('click', function (e) {
-        e.preventDefault();
-        const submenu = $(this).next('.collapse-inner');
-        const arrow = $(this).find('.submenu-arrow');
-
-        $('.collapse-inner').not(submenu).slideUp(300);
-        $('.submenu-arrow').not(arrow).removeClass('expanded').html('keyboard_arrow_right');
-
-        submenu.stop(true, true).slideToggle(300); 
-        arrow.toggleClass('expanded').html(arrow.hasClass('expanded') ? 'keyboard_arrow_down' : 'keyboard_arrow_right');
-    });
-
-    $('#toggleLogoutMenu').on('click', function () {
-        const logoutMenu = $('#logoutMenu');
-        logoutMenu.stop(true, true).slideToggle(300);
-    });
-});
-</script>
-
-
-
-
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel Pracowników</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<html lang="pl">
+<head>
     <style>
-        body { 
-            background-color: #121212; 
-            color: #ffffff; 
+        body {
+            background-color: #121212;
+            color: #fff;
+            margin-top: 10px;
         }
-        .table-container { 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            padding: 20px; 
+        .sidebar {
+            background-color: #b71c1c;
+            position: fixed;
+            top: 5px;
+            left: 10px;
+            height: calc(100vh - 10px);
+            width: 250px;
+            padding-top: 20px;
+            z-index: 1000;
+            transform: translateX(0);
+            transition: transform 0.3s ease;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sidebar .nav-link {
+            color: #fff;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar .nav-link i {
+            margin-right: 10px;
+        }
+        .sidebar .nav-link:hover {
+            background-color: #e53935;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+        .collapse-inner {
+            display: none;
+            margin-left: 20px;
+        }
+        .submenu-arrow {
+            transition: transform 0.3s ease;
+        }
+        .hidden {
+            transform: translateX(-260px);
+            transition: transform 0.3s ease;
+        }
+        .burger {
+            position: fixed;
+            padding: 8px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            z-index: 1000;
+        }
+        .toggle-sidebar-btn {
+            cursor: pointer;
+            position: absolute;
+            right: -15px;
+            z-index: 1000;
+        }
+        .logout-menu {
+            background-color: #b71c1c;
+            border-radius: 5px;
+            bottom: calc(100% + 10px);
+            right: 0;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            padding: 10px 0;
+        }
+        .logout-menu a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+        .logout-menu a:hover {
+            background-color: #e53935;
+        }
+        .logout-btn {
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            width: calc(100% - 20px);
+            border-radius: 5px;
+            text-align: center;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .logout-btn a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logout-btn a i {
+            margin-right: 10px;
+        }
+        .toggle-logout-menu {
+            background-color: #e53935;
+            border-radius: 10px;
+            padding: 8px;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .kod {
+            background-color: #4b4a0b;
+            width: 170px;
+            border-radius: 10px;
+            padding: 3px;
+        }
+        .koddiv {
+            font-size: 13px;
+            text-align: center;
+            top: 5px;
+            position: fixed;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .koddiv a {
+            text-align: center;
+        }
+        .zielony {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .zolty {
+            color: yellow;
+            font-weight: bold;
+        }
+        .czerwony {
+            color: #E00C00;
+            font-weight: bold;
+        }
+        .czarny {
+            color: black;
+            font-weight: bold;
+        }
+        /* Additional Styles for Table */
+        .table-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
             width: 100%;
         }
         h2 {
@@ -402,7 +161,7 @@ $(document).ready(function () {
         }
         .stats-container {
             width: 100%;
-            max-width: 1200px; /* Zwiększona maksymalna szerokość dla statystyk */
+            max-width: 1200px;
             margin-bottom: 30px;
         }
         .card {
@@ -431,24 +190,19 @@ $(document).ready(function () {
         .btn-dept {
             margin: 5px;
         }
-        .text-green { 
-            color: #28a745; 
-            font-weight: bold; 
+        .text-green {
+            color: #28a745;
+            font-weight: bold;
         }
-        .text-yellow { 
-            color: #ffc107; 
-            font-weight: bold; 
+        .text-yellow {
+            color: #ffc107;
+            font-weight: bold;
         }
-        .text-red { 
-            color: #dc3545; 
-            font-weight: bold; 
+        .text-red {
+            color: #dc3545;
+            font-weight: bold;
         }
-        /* Dodatkowe klasy kolorów, jeśli potrzebujesz */
-        .text-green-dark { color: #006400; font-weight: bold; } /* ciemnozielony */
-        .text-light-blue-1 { color: #1E90FF; font-weight: bold; } /* jasno chabrowy 1 */
-        .text-light-blue-2 { color: #87CEEB; font-weight: bold; } /* jasnoniebieski 2 */
-        .text-red-light-1 { color: #FF4500; font-weight: bold; } /* jasnoczerwony 1 */
-        
+        /* Responsiveness */
         @media (max-width: 768px) {
             .table th, .table td {
                 font-size: 0.65rem;
@@ -464,20 +218,15 @@ $(document).ready(function () {
                 font-size: 1rem;
             }
         }
-        .table-responsive {
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch; 
-        }
-        /* Centrowanie tabeli */
         .table-wrapper {
             display: flex;
             justify-content: center;
-            width: 100%; /* Ustawione na 100% dla responsywności */
+            width: 100%;
         }
         .table {
-            font-size: 0.85rem; /* Możesz dostosować rozmiar czcionki */
-            width: 80%; /* Ustawienie szerokości na 80% */
-            max-width: 1200px; /* Zachowano maksymalną szerokość */
+            font-size: 0.85rem;
+            width: 80%;
+            max-width: 1200px;
             border-radius: 8px;
             overflow: hidden;
             background-color: #1e1e1e;
@@ -485,7 +234,7 @@ $(document).ready(function () {
         .table th, .table td {
             text-align: center;
             vertical-align: middle;
-            padding: 8px; /* Zmniejszony padding */
+            padding: 8px;
             border: 1px solid #444;
         }
         .table th {
@@ -496,742 +245,127 @@ $(document).ready(function () {
             background-color: #444;
         }
     </style>
-
-
-<div class="table-container">
-    <h2>Lista Pracowników</h2>
-    
-    <!-- Sekcja Statystyk -->
-    <div class="stats-container">
-        <div class="row">
-            <!-- Badania Przedawnione -->
-            <div class="col-md-3 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Badania Przedawnione</h5>
-                        <p class="card-text">52</p>
-                    </div>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="toggle-sidebar-btn" id="toggleSidebar">
+            <i class="material-icons burger">menu</i>
+        </div>
+        <div class="koddiv">
+            <p class="kod">
+                Aktualny kod: <span class="zolty">Zolty</span>
+            </p>
+        </div>
+        <img class="logo" src="../public/SD.png" width="180px" height="180px" alt="SD">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="../index.php">
+                    <i class="material-icons">home</i> <span>Strona Główna</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link toggle-submenu" href="#aktywnoscSubmenu" role="button">
+                    <i class="material-icons">groups</i> <span>Pracownicy</span>
+                    <i class="material-icons submenu-arrow" id="arrow1">keyboard_arrow_right</i>
+                </a>
+                <div class="collapse-inner" id="aktywnoscSubmenu" style="display: none;">
+                    <a class="nav-link a-link" href="../pracownicy/lista_pracownikow.php"><i class="material-icons">person_add</i> Lista pracowników</a>
+                    <a class="nav-link a-link" href="../pracownicy/taryfikator.php"><i class="material-icons">gavel</i> Taryfikator</a>
+                    <a class="nav-link a-link" href="../pracownicy/prawa.php"><i class="material-icons">local_police</i> Prawa Podstawowe</a>
+                    <a class="nav-link a-link" href="../pracownicy/legalnosc.php"><i class="material-icons">plumbing</i> Legalność Przedmiotów</a>
+                    <a class="nav-link a-link" href="../pracownicy/kalkulator.php"><i class="material-icons">calculate</i> Kalkulator</a>
                 </div>
-            </div>
-            <!-- Badania Aktywne -->
-            <div class="col-md-3 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Badania Aktywne</h5>
-                        <p class="card-text">59</p>
-                    </div>
-                </div>
-            </div>
-            <!-- % Nieważnych Badań -->
-            <div class="col-md-3 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">% Nieważnych Badań</h5>
-                        <p class="card-text">46.85%</p>
-                    </div>
-                </div>
-            </div>
-            <!-- Ilość osób we frakcji -->
-            <div class="col-md-3 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Ilość osób we frakcji</h5>
-                        <p class="card-text">111</p>
-                    </div>
-                </div>
+            </li>
+        </ul>
+        <div class="logout-btn">
+            <div class="toggle-logout-menu" id="toggleLogoutMenu">
+                <span class="material-icons">exit_to_app</span> Wyloguj
             </div>
         </div>
     </div>
-    
-    <!-- Tabela Pracowników -->
-    <div class="table-wrapper">
-        <div class="table-responsive">
-            <table class="table table-dark table-striped mx-auto">
+    <div class="content">
+        <h2>Lista Pracowników</h2>
+        <div class="table-wrapper">
+            <table class="table">
                 <thead>
                     <tr>
-                        <th>UID</th>
                         <th>Imię</th>
                         <th>Nazwisko</th>
+                        <th>Odznaka</th>
+                        <th>KPP</th>
+                        <th>Badania</th>
+                        <th>Wyjazdy</th>
+                        <th>ASU</th>
+                        <th>Operacje</th>
                         <th>Ranga</th>
-                        <th>Nazwa Rangi</th>
-                        <th>Numer Odznaki</th>
-                        <th>SEU</th><th>ASU</th><th>NEGO/SV</th><th>AQUA</th><th>WPN</th><th>KPP</th><th>RTO</th><th>DOS</th><th>S.E.R.T</th><th>D.T.U</th><th>FTO</th><th>TD</th><th>A.I.A.D</th>                        <th>Badania</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                                <td>67811</td>
-                                <td>Luna</td>
-                                <td>Walton</td>
-                                <td>20</td>
-                                <td>Sheriff</td>
-                                <td>01</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td><span class="text-green">3 dni</span></td></tr><tr>
-                                <td>45511</td>
-                                <td>Colio</td>
-                                <td>Grandpa</td>
-                                <td>19</td>
-                                <td>Undersheriff</td>
-                                <td>02</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td><span class="text-green">1 dni</span></td></tr><tr>
-                                <td>60414</td>
-                                <td>Papito</td>
-                                <td>Tshabalala</td>
-                                <td>19</td>
-                                <td>Undersheriff</td>
-                                <td>06</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td><span class="text-green">1 dni</span></td></tr><tr>
-                                <td>69620</td>
-                                <td>Max</td>
-                                <td>Tshabalala</td>
-                                <td>19</td>
-                                <td>Undersheriff</td>
-                                <td>022</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td><span class="text-green">4 dni</span></td></tr><tr>
-                                <td>22197</td>
-                                <td>Amir</td>
-                                <td>Lapupa</td>
-                                <td>18</td>
-                                <td>Assistant Sheriff</td>
-                                <td>07</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td><span class="text-green">1 dni</span></td></tr><tr>
-                                <td>59388</td>
-                                <td>Arkadiusz</td>
-                                <td>Rzegna</td>
-                                <td>18</td>
-                                <td>Assistant Sheriff</td>
-                                <td>082</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td><span class="text-green">3 dni</span></td></tr><tr>
-                                <td>63245</td>
-                                <td>Marcus</td>
-                                <td>Newton</td>
-                                <td>18</td>
-                                <td>Assistant Sheriff</td>
-                                <td>061</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td><span class="text-green">5 dni</span></td></tr><tr>
-                                <td>40709</td>
-                                <td>Mateusz</td>
-                                <td>Lapupa</td>
-                                <td>17</td>
-                                <td>Chief Deputy</td>
-                                <td>307</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td><span class="text-green">1 dni</span></td></tr><tr>
-                                <td>48740</td>
-                                <td>Anthony</td>
-                                <td>Tshabalala</td>
-                                <td>17</td>
-                                <td>Chief Deputy</td>
-                                <td>302</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td><span class="text-green">5 dni</span></td></tr><tr>
-                                <td>49813</td>
-                                <td>Marianek</td>
-                                <td>Lapupa</td>
-                                <td>17</td>
-                                <td>Chief Deputy</td>
-                                <td>605</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td><span class="text-red">9 dni</span></td></tr><tr>
-                                <td>60157</td>
-                                <td>Fago</td>
-                                <td>Tshabalala</td>
-                                <td>17</td>
-                                <td>Chief Deputy</td>
-                                <td>777</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td><span class="text-green">1 dni</span></td></tr><tr>
-                                <td>7973</td>
-                                <td>Mietek</td>
-                                <td>Fifonz</td>
-                                <td>16</td>
-                                <td>Commander</td>
-                                <td>053</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td><span class="text-green">2 dni</span></td></tr><tr>
-                                <td>38365</td>
-                                <td>Michael</td>
-                                <td>Lee</td>
-                                <td>16</td>
-                                <td>Commander</td>
-                                <td>405</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td><span class="text-green">5 dni</span></td></tr><tr>
-                                <td>43585</td>
-                                <td>Ryan</td>
-                                <td>Ederson</td>
-                                <td>16</td>
-                                <td>Commander</td>
-                                <td>071</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">5 dni</span></td></tr><tr>
-                                <td>43642</td>
-                                <td>Ernest</td>
-                                <td>McCorn </td>
-                                <td>16</td>
-                                <td>Commander</td>
-                                <td>081</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td><span class="text-green">1 dni</span></td></tr><tr>
-                                <td>49009</td>
-                                <td>Sandy</td>
-                                <td>Lee</td>
-                                <td>16</td>
-                                <td>Commander</td>
-                                <td>04</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td><span class="text-red">69 dni</span></td></tr><tr>
-                                <td>49010</td>
-                                <td>Michael</td>
-                                <td>Goodman</td>
-                                <td>16</td>
-                                <td>Commander</td>
-                                <td>051</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td><span class="text-red">69 dni</span></td></tr><tr>
-                                <td>52969</td>
-                                <td>Zaron</td>
-                                <td>Zarkovvsky</td>
-                                <td>16</td>
-                                <td>Commander</td>
-                                <td>200</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td><span class="text-red">12 dni</span></td></tr><tr>
-                                <td>68481</td>
-                                <td>Maciek</td>
-                                <td>Tshabalala</td>
-                                <td>16</td>
-                                <td>Commander</td>
-                                <td>08</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">46 dni</span></td></tr><tr>
-                                <td>11751</td>
-                                <td>Emanuel</td>
-                                <td>Preston</td>
-                                <td>15</td>
-                                <td>Deputy Commander</td>
-                                <td>298</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">12 dni</span></td></tr><tr>
-                                <td>64508</td>
-                                <td>Michael</td>
-                                <td>Ogkurz</td>
-                                <td>15</td>
-                                <td>Deputy Commander</td>
-                                <td>306</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td><span class="text-green">6 dni</span></td></tr><tr>
-                                <td>30075</td>
-                                <td>Din</td>
-                                <td>Djarin</td>
-                                <td>14</td>
-                                <td>Master Captain</td>
-                                <td>750</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">16 dni</span></td></tr><tr>
-                                <td>41270</td>
-                                <td>Luigi</td>
-                                <td>Lapupa</td>
-                                <td>14</td>
-                                <td>Master Captain</td>
-                                <td>252</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">18 dni</span></td></tr><tr>
-                                <td>75001</td>
-                                <td>Kriss</td>
-                                <td>Brzozkwinka</td>
-                                <td>14</td>
-                                <td>Master Captain</td>
-                                <td>815</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td><span class="text-green">1 dni</span></td></tr><tr>
-                                <td>75719</td>
-                                <td>Alex</td>
-                                <td>Corsi</td>
-                                <td>14</td>
-                                <td>Master Captain</td>
-                                <td>757</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">26 dni</span></td></tr><tr>
-                                <td>22035</td>
-                                <td>Savik</td>
-                                <td>Love</td>
-                                <td>13</td>
-                                <td>Captain</td>
-                                <td>225</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">23 dni</span></td></tr><tr>
-                                <td>39954</td>
-                                <td>Antek</td>
-                                <td>Bulkowski</td>
-                                <td>13</td>
-                                <td>Captain</td>
-                                <td>707</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">49 dni</span></td></tr><tr>
-                                <td>62627</td>
-                                <td>Jack</td>
-                                <td>Wayne</td>
-                                <td>13</td>
-                                <td>Captain</td>
-                                <td>627</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">1 dni</span></td></tr><tr>
-                                <td>11482</td>
-                                <td>Stefan</td>
-                                <td>Kopara</td>
-                                <td>12</td>
-                                <td>Master Lieutenant</td>
-                                <td>114</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">13 dni</span></td></tr><tr>
-                                <td>18964</td>
-                                <td>Joel</td>
-                                <td>Malone</td>
-                                <td>12</td>
-                                <td>Master Lieutenant</td>
-                                <td>203</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">6 dni</span></td></tr><tr>
-                                <td>53097</td>
-                                <td>Nathan</td>
-                                <td>Elliott</td>
-                                <td>12</td>
-                                <td>Master Lieutenant</td>
-                                <td>826</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td><span class="text-red">10 dni</span></td></tr><tr>
-                                <td>54281</td>
-                                <td>John</td>
-                                <td>Varane</td>
-                                <td>12</td>
-                                <td>Master Lieutenant</td>
-                                <td>092</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td><span class="text-green">4 dni</span></td></tr><tr>
-                                <td>17037</td>
-                                <td>Leonard</td>
-                                <td>Tarkowski</td>
-                                <td>11</td>
-                                <td>Lieutenant</td>
-                                <td>911</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">33 dni</span></td></tr><tr>
-                                <td>19379</td>
-                                <td>Wladimir</td>
-                                <td>Kliczko</td>
-                                <td>11</td>
-                                <td>Lieutenant</td>
-                                <td>616</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">9 dni</span></td></tr><tr>
-                                <td>27089</td>
-                                <td>Siwy</td>
-                                <td>Durden</td>
-                                <td>11</td>
-                                <td>Lieutenant</td>
-                                <td>069</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">4 dni</span></td></tr><tr>
-                                <td>42592</td>
-                                <td>Angel</td>
-                                <td>Avii</td>
-                                <td>11</td>
-                                <td>Lieutenant</td>
-                                <td>816</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td><span class="text-green">6 dni</span></td></tr><tr>
-                                <td>45161</td>
-                                <td>Vincent</td>
-                                <td>Scott</td>
-                                <td>11</td>
-                                <td>Lieutenant</td>
-                                <td>100</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">27 dni</span></td></tr><tr>
-                                <td>47195</td>
-                                <td>Tomasz</td>
-                                <td>Ghost</td>
-                                <td>11</td>
-                                <td>Lieutenant</td>
-                                <td>448</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">1 dni</span></td></tr><tr>
-                                <td>53934</td>
-                                <td>Melisa</td>
-                                <td>Mouseman</td>
-                                <td>11</td>
-                                <td>Lieutenant</td>
-                                <td>124</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">30 dni</span></td></tr><tr>
-                                <td>54420</td>
-                                <td>Rysio</td>
-                                <td>Gumis</td>
-                                <td>11</td>
-                                <td>Lieutenant</td>
-                                <td></td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">4 dni</span></td></tr><tr>
-                                <td>79090</td>
-                                <td>Michael</td>
-                                <td>Torpeda</td>
-                                <td>11</td>
-                                <td>Lieutenant</td>
-                                <td>913</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">5 dni</span></td></tr><tr>
-                                <td>84270</td>
-                                <td>Tyler</td>
-                                <td>Hernandez</td>
-                                <td>11</td>
-                                <td>Lieutenant</td>
-                                <td>101</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td><span class="text-green">3 dni</span></td></tr><tr>
-                                <td>84917</td>
-                                <td>Trey</td>
-                                <td>Johnson</td>
-                                <td>11</td>
-                                <td>Lieutenant</td>
-                                <td>825</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td><span class="text-red">39 dni</span></td></tr><tr>
-                                <td>15300</td>
-                                <td>Lovume</td>
-                                <td>VarEmreis</td>
-                                <td>10</td>
-                                <td>Master Sergeant</td>
-                                <td>153</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-yellow">7 dni</span></td></tr><tr>
-                                <td>22041</td>
-                                <td>Maciej</td>
-                                <td>Durden</td>
-                                <td>10</td>
-                                <td>Master Sergeant</td>
-                                <td>068</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td><span class="text-red">24 dni</span></td></tr><tr>
-                                <td>27833</td>
-                                <td>Dave</td>
-                                <td>Jones</td>
-                                <td>10</td>
-                                <td>Master Sergeant</td>
-                                <td>333</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-yellow">7 dni</span></td></tr><tr>
-                                <td>59166</td>
-                                <td>Antonio</td>
-                                <td>Smith</td>
-                                <td>10</td>
-                                <td>Master Sergeant</td>
-                                <td>666</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-yellow">7 dni</span></td></tr><tr>
-                                <td>72844</td>
-                                <td>Dwayne</td>
-                                <td>Lapupa</td>
-                                <td>10</td>
-                                <td>Master Sergeant</td>
-                                <td>303</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">2 dni</span></td></tr><tr>
-                                <td>39901</td>
-                                <td>Kacper</td>
-                                <td>Stachursky</td>
-                                <td>9</td>
-                                <td>Staff Sergeant</td>
-                                <td>807</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td><span class="text-green">6 dni</span></td></tr><tr>
-                                <td>42608</td>
-                                <td>Thomas</td>
-                                <td>Ballantines</td>
-                                <td>9</td>
-                                <td>Staff Sergeant</td>
-                                <td>515</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-yellow">7 dni</span></td></tr><tr>
-                                <td>55661</td>
-                                <td>Lucy</td>
-                                <td>Nerkowiec</td>
-                                <td>9</td>
-                                <td>Staff Sergeant</td>
-                                <td>661</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">15 dni</span></td></tr><tr>
-                                <td>71970</td>
-                                <td>Franczesko</td>
-                                <td>Dyrdymal</td>
-                                <td>9</td>
-                                <td>Staff Sergeant</td>
-                                <td>222</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">3 dni</span></td></tr><tr>
-                                <td>72771</td>
-                                <td>Gerald</td>
-                                <td>Wood</td>
-                                <td>9</td>
-                                <td>Staff Sergeant</td>
-                                <td>153</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">45 dni</span></td></tr><tr>
-                                <td>77441</td>
-                                <td>Marcus</td>
-                                <td>Picollo</td>
-                                <td>9</td>
-                                <td>Staff Sergeant</td>
-                                <td>105</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">51 dni</span></td></tr><tr>
-                                <td>77832</td>
-                                <td>Mafia</td>
-                                <td>Mifoz</td>
-                                <td>9</td>
-                                <td>Staff Sergeant</td>
-                                <td>060</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">6 dni</span></td></tr><tr>
-                                <td>27215</td>
-                                <td>Sergio</td>
-                                <td>Jones</td>
-                                <td>8</td>
-                                <td>Sergeant</td>
-                                <td>705</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-yellow">7 dni</span></td></tr><tr>
-                                <td>30824</td>
-                                <td>Dinio</td>
-                                <td>Marcos</td>
-                                <td>8</td>
-                                <td>Sergeant</td>
-                                <td>401</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">8 dni</span></td></tr><tr>
-                                <td>42609</td>
-                                <td>Leonardo</td>
-                                <td>Lambert</td>
-                                <td>8</td>
-                                <td>Sergeant</td>
-                                <td>244</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">17 dni</span></td></tr><tr>
-                                <td>60308</td>
-                                <td>Martinez</td>
-                                <td>Salvador</td>
-                                <td>8</td>
-                                <td>Sergeant</td>
-                                <td>859</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">106 dni</span></td></tr><tr>
-                                <td>71807</td>
-                                <td>Frank</td>
-                                <td>Stolec</td>
-                                <td>8</td>
-                                <td>Sergeant</td>
-                                <td>828</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">29 dni</span></td></tr><tr>
-                                <td>74452</td>
-                                <td>Ernest</td>
-                                <td>Dior</td>
-                                <td>8</td>
-                                <td>Sergeant</td>
-                                <td>837</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">8 dni</span></td></tr><tr>
-                                <td>81920</td>
-                                <td>Drake </td>
-                                <td>Hamilton</td>
-                                <td>8</td>
-                                <td>Sergeant</td>
-                                <td>920</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">6 dni</span></td></tr><tr>
-                                <td>83711</td>
-                                <td>Jacob</td>
-                                <td>Hill</td>
-                                <td>8</td>
-                                <td>Sergeant</td>
-                                <td>711</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">1 dni</span></td></tr><tr>
-                                <td>87929</td>
-                                <td>Henry</td>
-                                <td>Snow</td>
-                                <td>8</td>
-                                <td>Sergeant</td>
-                                <td>212</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">1 dni</span></td></tr><tr>
-                                <td>26564</td>
-                                <td>Osheaa</td>
-                                <td>Diaz</td>
-                                <td>7</td>
-                                <td>Deputy Sheriff III</td>
-                                <td>514</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">47 dni</span></td></tr><tr>
-                                <td>36149</td>
-                                <td>Liam</td>
-                                <td>Diaz</td>
-                                <td>7</td>
-                                <td>Deputy Sheriff III</td>
-                                <td>743</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">28 dni</span></td></tr><tr>
-                                <td>41208</td>
-                                <td>Dwayne</td>
-                                <td>Infinity</td>
-                                <td>7</td>
-                                <td>Deputy Sheriff III</td>
-                                <td>882</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">5 dni</span></td></tr><tr>
-                                <td>46194</td>
-                                <td>Fabian</td>
-                                <td>Raban</td>
-                                <td>7</td>
-                                <td>Deputy Sheriff III</td>
-                                <td>407</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">12 dni</span></td></tr><tr>
-                                <td>49569</td>
-                                <td>Johnny </td>
-                                <td>Keen</td>
-                                <td>7</td>
-                                <td>Deputy Sheriff III</td>
-                                <td>844</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td><span class="text-green">4 dni</span></td></tr><tr>
-                                <td>55573</td>
-                                <td>Martin</td>
-                                <td>Taekwondo</td>
-                                <td>7</td>
-                                <td>Deputy Sheriff III</td>
-                                <td>555</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">13 dni</span></td></tr><tr>
-                                <td>63360</td>
-                                <td>Rambri</td>
-                                <td>Szymala</td>
-                                <td>7</td>
-                                <td>Deputy Sheriff III</td>
-                                <td>500</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">2 dni</span></td></tr><tr>
-                                <td>74258</td>
-                                <td>Pablo</td>
-                                <td>Jackson</td>
-                                <td>7</td>
-                                <td>Deputy Sheriff III</td>
-                                <td>835</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">19 dni</span></td></tr><tr>
-                                <td>84259</td>
-                                <td>Karol</td>
-                                <td>DeSanta</td>
-                                <td>7</td>
-                                <td>Deputy Sheriff III</td>
-                                <td>606</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">13 dni</span></td></tr><tr>
-                                <td>11098</td>
-                                <td>Piter</td>
-                                <td>Purkerr</td>
-                                <td>6</td>
-                                <td>Deputy Sheriff II</td>
-                                <td>287</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">81 dni</span></td></tr><tr>
-                                <td>25850</td>
-                                <td>Camillo </td>
-                                <td>Buccino</td>
-                                <td>6</td>
-                                <td>Deputy Sheriff II</td>
-                                <td>767</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">14 dni</span></td></tr><tr>
-                                <td>42920</td>
-                                <td>Connor </td>
-                                <td>Shy</td>
-                                <td>6</td>
-                                <td>Deputy Sheriff II</td>
-                                <td>834</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">12 dni</span></td></tr><tr>
-                                <td>51891</td>
-                                <td>Katie</td>
-                                <td>Shy</td>
-                                <td>6</td>
-                                <td>Deputy Sheriff II</td>
-                                <td>830</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">2 dni</span></td></tr><tr>
-                                <td>54877</td>
-                                <td>Jax</td>
-                                <td>Grom</td>
-                                <td>6</td>
-                                <td>Deputy Sheriff II</td>
-                                <td>268</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">9 dni</span></td></tr><tr>
-                                <td>60894</td>
-                                <td>Mateusz</td>
-                                <td>Vega</td>
-                                <td>6</td>
-                                <td>Deputy Sheriff II</td>
-                                <td>304</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">4 dni</span></td></tr><tr>
-                                <td>86624</td>
-                                <td>Danny</td>
-                                <td>Grom</td>
-                                <td>6</td>
-                                <td>Deputy Sheriff II</td>
-                                <td>267</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">5 dni</span></td></tr><tr>
-                                <td>13859</td>
-                                <td>Franklin</td>
-                                <td>Wojski</td>
-                                <td>5</td>
-                                <td>Deputy Sheriff I</td>
-                                <td>839</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">3 dni</span></td></tr><tr>
-                                <td>36021</td>
-                                <td>Patrick </td>
-                                <td>Zimmer</td>
-                                <td>5</td>
-                                <td>Deputy Sheriff I</td>
-                                <td>898</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">5 dni</span></td></tr><tr>
-                                <td>42957</td>
-                                <td>Colin</td>
-                                <td>Lapupa</td>
-                                <td>5</td>
-                                <td>Deputy Sheriff I</td>
-                                <td>444</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-yellow">7 dni</span></td></tr><tr>
-                                <td>45153</td>
-                                <td>Louis</td>
-                                <td>Baskat</td>
-                                <td>5</td>
-                                <td>Deputy Sheriff I</td>
-                                <td>603</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">48 dni</span></td></tr><tr>
-                                <td>46358</td>
-                                <td>Aman</td>
-                                <td>Lover</td>
-                                <td>5</td>
-                                <td>Deputy Sheriff I</td>
-                                <td>245</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">6 dni</span></td></tr><tr>
-                                <td>61704</td>
-                                <td>Alibab</td>
-                                <td>Wejzon</td>
-                                <td>5</td>
-                                <td>Deputy Sheriff I</td>
-                                <td>704</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-yellow">7 dni</span></td></tr><tr>
-                                <td>69762</td>
-                                <td>Tommy</td>
-                                <td>Mason</td>
-                                <td>5</td>
-                                <td>Deputy Sheriff I</td>
-                                <td>347</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">4 dni</span></td></tr><tr>
-                                <td>81220</td>
-                                <td>Adam</td>
-                                <td>Malinowski</td>
-                                <td>5</td>
-                                <td>Deputy Sheriff I</td>
-                                <td>409</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">3 dni</span></td></tr><tr>
-                                <td>85941</td>
-                                <td>Adrian</td>
-                                <td>Zimmer</td>
-                                <td>5</td>
-                                <td>Deputy Sheriff I</td>
-                                <td>843</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">4 dni</span></td></tr><tr>
-                                <td>10145</td>
-                                <td>Thomas</td>
-                                <td>Dior</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>504</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">29 dni</span></td></tr><tr>
-                                <td>18469</td>
-                                <td>Mateusz</td>
-                                <td>Matts</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>708</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">6 dni</span></td></tr><tr>
-                                <td>22382</td>
-                                <td>Denis</td>
-                                <td>Johnes</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>841</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">4 dni</span></td></tr><tr>
-                                <td>26011</td>
-                                <td>Samir </td>
-                                <td>Abugajew</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>420</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">38 dni</span></td></tr><tr>
-                                <td>27229</td>
-                                <td>Kuzo</td>
-                                <td>Petarda</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>429</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">11 dni</span></td></tr><tr>
-                                <td>47604</td>
-                                <td>Dylan</td>
-                                <td>Roberts</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>184</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">6 dni</span></td></tr><tr>
-                                <td>58165</td>
-                                <td>Jay </td>
-                                <td>Flick</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>912</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">34 dni</span></td></tr><tr>
-                                <td>62005</td>
-                                <td>Frank</td>
-                                <td>Savage</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>836</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">10 dni</span></td></tr><tr>
-                                <td>64891</td>
-                                <td>Jacob</td>
-                                <td>Goldfinger</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>877</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">5 dni</span></td></tr><tr>
-                                <td>68464</td>
-                                <td>Luke</td>
-                                <td>Angels</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>464</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">8 dni</span></td></tr><tr>
-                                <td>69607</td>
-                                <td>Mohamed</td>
-                                <td>Brzozkwinka</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>607</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">9 dni</span></td></tr><tr>
-                                <td>75304</td>
-                                <td>Omar</td>
-                                <td>Garcia</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>439</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">9 dni</span></td></tr><tr>
-                                <td>82812</td>
-                                <td>Steven </td>
-                                <td>Hawkins</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>812</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">23 dni</span></td></tr><tr>
-                                <td>84003</td>
-                                <td>Bob </td>
-                                <td>Peters</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>239</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">1 dni</span></td></tr><tr>
-                                <td>84871</td>
-                                <td>Sebastian</td>
-                                <td>Nowaczek</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>871</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">4 dni</span></td></tr><tr>
-                                <td>86524</td>
-                                <td>Lucas</td>
-                                <td>Christensen</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>428</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">8 dni</span></td></tr><tr>
-                                <td>91684</td>
-                                <td>Kaneki</td>
-                                <td>Grom</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>397</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-green">3 dni</span></td></tr><tr>
-                                <td>92030</td>
-                                <td>Robert</td>
-                                <td>Pakowski</td>
-                                <td>4</td>
-                                <td>Deputy Sheriff</td>
-                                <td>645</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">15 dni</span></td></tr><tr>
-                                <td>48986</td>
-                                <td>Coco</td>
-                                <td>Dog</td>
-                                <td>2</td>
-                                <td>K9</td>
-                                <td></td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">19 dni</span></td></tr><tr>
-                                <td>57803</td>
-                                <td>Devon</td>
-                                <td>Dog</td>
-                                <td>2</td>
-                                <td>K9</td>
-                                <td>0</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">50 dni</span></td></tr><tr>
-                                <td>80290</td>
-                                <td>Zeke</td>
-                                <td>Dog</td>
-                                <td>2</td>
-                                <td>K9</td>
-                                <td></td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-red">8 dni</span></td></tr><tr>
-                                <td>49077</td>
-                                <td>Connor</td>
-                                <td>Morgan</td>
-                                <td>1</td>
-                                <td>Zawieszony</td>
-                                <td>BRAK</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td>❌</td><td><span class="text-yellow">7 dni</span></td></tr>                </tbody>
+                <tbody id="table-body">
+                    <!-- Dynamic data will be populated here from Google Sheets -->
+                </tbody>
             </table>
         </div>
     </div>
-    
-    <!-- Paginacja -->
-    </div>
 
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        const SPREADSHEET_ID = '18961azH0ONUgJ_k-WZLHdvggzOZM-r96FAKQ63S-BOw';
+        const API_KEY = 'AIzaSyD9GhpCPkgF1ne_qjLAc3RrKGaIBZd5urI';
 
-</body><app-ls-content ng-version="17.3.7"></app-ls-content></html>
+        function authenticate() {
+            return gapi.auth2.getAuthInstance()
+                .signIn({ scope: "https://www.googleapis.com/auth/spreadsheets.readonly" })
+                .then(function() {
+                    console.log("Sign-in successful");
+                }, function(err) {
+                    console.error("Error signing in", err);
+                });
+        }
+
+        function loadClient() {
+            gapi.client.setApiKey(API_KEY);
+            return gapi.client.load("https://sheets.googleapis.com/$discovery/rest?version=v4")
+                .then(function() {
+                    console.log("GAPI client loaded for API");
+                }, function(err) {
+                    console.error("Error loading GAPI client", err);
+                });
+        }
+
+        function execute() {
+            return gapi.client.sheets.spreadsheets.values.get({
+                spreadsheetId: SPREADSHEET_ID,
+                range: "Sheet1!B4:J100",
+            }).then(function(response) {
+                console.log(response.result.values);
+                updateTable(response.result.values);
+            }, function(err) {
+                console.error("Execute error", err);
+            });
+        }
+
+        function updateTable(data) {
+            const tableBody = document.getElementById('table-body');
+            tableBody.innerHTML = ''; // Clear current table
+
+            data.forEach(row => {
+                const tr = document.createElement('tr');
+                row.forEach(cell => {
+                    const td = document.createElement('td');
+                    td.textContent = cell;
+                    tr.appendChild(td);
+                });
+                tableBody.appendChild(tr);
+            });
+        }
+
+        gapi.load('client:auth2', function() {
+            gapi.auth2.init({ client_id: '777913036189-dak55eupue5l0o66k6bjsggmki97i41h.apps.googleusercontent.com.apps.googleusercontent.com' })
+                .then(function() {
+                    authenticate().then(loadClient).then(execute);
+                });
+        });
+    </script>
+</body>
+</html>
