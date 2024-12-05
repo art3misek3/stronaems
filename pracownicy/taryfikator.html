@@ -1,0 +1,1813 @@
+<html lang="pl"><head><style>
+    
+body {
+    background-color: #121212;
+    color: #fff;
+    margin-top: 10px;
+}
+.sidebar {
+    background-color: #b71c1c;
+    position: fixed;
+    top: 5px;
+    left: 10px;
+    height: calc(100vh - 10px);
+    width: 250px;
+    padding-top: 20px;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidebar .nav-link {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+.sidebar .nav-link:hover {
+    background-color: #e53935;
+}
+.content {
+    margin-left: 270px;
+    padding: 20px;
+}
+.collapse:not(.show) {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s ease;
+}
+.collapse.show {
+    height: auto;
+    transition: height 0.4s ease;
+}
+.sidebar-hidden {
+    transform: translateX(-260px);
+}
+.navbar-toggler {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+    background: none;
+    border: none;
+    outline: none;
+}
+.navbar-toggler-icon-container {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.material-icons {
+    transition: transform 0.3s ease;
+}
+.arrow-right {
+    transform: rotate(0deg);
+}
+.arrow-left {
+    transform: rotate(180deg);
+}
+
+.title{
+    text-align: center;
+}
+.logout-icon{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 10px;
+}
+.burger{
+    position: fixed;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+.logo{
+    position: relative;
+    left: 30px;
+    top: 20px;
+}
+.collapse-inner{
+    margin-left: 10px;
+}
+body {
+    background-color: #121212;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.sidebar {
+    background-color: #b71c1c;
+    position: fixed;
+    top: 5px;
+    left: 10px;
+    height: calc(100vh - 10px);
+    width: 250px;
+    padding-top: 20px;
+    z-index: 1000;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .nav-link {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: #e53935;
+}
+
+.content {
+    margin-left: 270px;
+    padding: 20px;
+}
+
+.collapse-inner {
+    display: none;
+    margin-left: 20px;
+}
+
+.submenu-arrow {
+    transition: transform 0.3s ease;
+}
+
+.hidden {
+    transform: translateX(-260px);
+    transition: transform 0.3s ease;
+}
+
+.burger {
+    position: fixed;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    z-index: 1000;
+
+}
+.toggle-sidebar-btn{
+    cursor: pointer;
+    position: absolute;
+    right: -15px;
+    z-index: 1000;
+}
+.logout-menu {
+    background-color: #b71c1c;
+    border-radius: 5px;
+    bottom: calc(100% + 10px);
+    right: 0;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+}
+
+
+.logout-menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-menu a:hover {
+    background-color: #e53935;
+}
+
+.logout-btn {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    width: calc(100% - 20px); 
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.logout-btn a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logout-btn a i {
+    margin-right: 10px;
+}
+.toggle-logout-menu {
+    background-color: #e53935;
+    border-radius: 10px;
+    padding: 8px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .hidden {
+        transform: translateX(-260px) !important;
+    }
+    .sidebar {
+        transform: translateX(0);
+    }
+    .content {
+        margin-left: 0;
+    }
+    .logout-btn {
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        width: calc(100% - 20px); 
+        border-radius: 5px;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+.kod{
+    background-color: #4b4a0b;
+    width: 170px;
+    border-radius: 10px;
+    padding: 3px;
+}
+.koddiv{
+    font-size: 13px;
+    text-align: center;
+    top: 5px;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.koddiv a{
+    text-align: center;
+}
+.zielony {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.zolty {
+    color: yellow;
+    font-weight: bold;
+}
+
+.czerwony {
+    color: #E00C00;
+    font-weight: bold;
+}
+
+.czarny {
+    color: black;
+    font-weight: bold;
+}
+</style>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<style>[_nghost-ng-c2697620354]{font-family:Open Sans,sans-serif;color:#121212}</style></head><body><div class="sidebar" id="sidebar">
+    <div class="toggle-sidebar-btn" id="toggleSidebar">
+        <i class="material-icons burger">menu</i>
+    </div>
+    <div class="koddiv">
+        <p class="kod">
+            Aktualny kod: <span class="zolty">Zolty</span>
+        </p>
+    </div>
+    <img class="logo" src="../public/SD.png" width="180px" height="180px" alt="SD">
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link" href="../index.php">
+                <i class="material-icons">home</i> <span>Strona Główna</span>
+            </a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link toggle-submenu" href="#aktywnoscSubmenu" role="button">
+                <i class="material-icons">groups</i> <span>Pracownicy</span>
+                <i class="material-icons submenu-arrow" id="arrow1">keyboard_arrow_right</i>
+                </a>
+                <div class="collapse-inner" id="aktywnoscSubmenu" style="display: none;">
+                <a class="nav-link a-link" href="../pracownicy/lista_pracownikow.php"><i class="material-icons">person_add</i> Lista pracowników</a>
+                <a class="nav-link a-link" href="../pracownicy/taryfikator.php"><i class="material-icons">gavel</i> Taryfikator</a>
+                <a class="nav-link a-link" href="../pracownicy/prawa.php"><i class="material-icons">local_police</i> Prawa Podstawowe</a>
+                <a class="nav-link a-link" href="../pracownicy/legalnosc.php"><i class="material-icons">plumbing</i> Legalność Przedmiotów</a>
+                <a class="nav-link a-link" href="../pracownicy/kalkulator.php"><i class="material-icons">calculate</i> Kalkulator</a>
+            </div>
+            
+        </li> 
+            </ul>
+
+    <div class="logout-btn">
+        <div class="toggle-logout-menu" id="toggleLogoutMenu">
+            <span class="logout_login_name">Connor  Shy</span> <i class="material-icons logout-icon">settings</i>
+        </div>
+        <div class="logout-menu" id="logoutMenu" style="display: none;">
+            <a href="../configs/user-settings.php">Zmień dane</a>
+            <a href="../configs/logout.php">Wyloguj</a>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+$(document).ready(function () {
+    const sidebar = $('#sidebar');
+    const toggleButton = $('#toggleSidebar');
+
+    toggleButton.on('click', function () {
+        sidebar.toggleClass('hidden');
+    });
+    $('.toggle-submenu-inner').on('click', function (e) {
+        e.preventDefault();
+        const innerSubmenu = $(this).next('.collapse-inner-inner');
+        const innerArrow = $(this).find('.submenu-arrow');
+
+        // Ukrywanie innych podmenu wewnętrznych oraz resetowanie ich strzałek
+        $('.collapse-inner-inner').not(innerSubmenu).slideUp(300);
+        $('.submenu-arrow').not(innerArrow).removeClass('expanded').html('keyboard_arrow_right');
+
+        // Rozwijanie lub zwijanie wybranego podmenu wewnętrznego i zmiana ikony strzałki
+        innerSubmenu.stop(true, true).slideToggle(300); 
+        innerArrow.toggleClass('expanded').html(innerArrow.hasClass('expanded') ? 'keyboard_arrow_down' : 'keyboard_arrow_right');
+    });
+
+    $('.toggle-submenu').on('click', function (e) {
+        e.preventDefault();
+        const submenu = $(this).next('.collapse-inner');
+        const arrow = $(this).find('.submenu-arrow');
+
+        $('.collapse-inner').not(submenu).slideUp(300);
+        $('.submenu-arrow').not(arrow).removeClass('expanded').html('keyboard_arrow_right');
+
+        submenu.stop(true, true).slideToggle(300); 
+        arrow.toggleClass('expanded').html(arrow.hasClass('expanded') ? 'keyboard_arrow_down' : 'keyboard_arrow_right');
+    });
+
+    $('#toggleLogoutMenu').on('click', function () {
+        const logoutMenu = $('#logoutMenu');
+        logoutMenu.stop(true, true).slideToggle(300);
+    });
+});
+</script>
+
+
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <title>Taryfikator STATE</title>
+    <style>
+    body {
+    background-color: #121212;
+    margin-top: 10px;
+    }
+        .table-container {
+            display: flex !important;
+            justify-content: center !important;
+            padding: 20px !important;
+            width: auto !important; 
+            table-layout: auto !important; 
+            font-family: Arial, sans-serif !important;
+        }
+    
+        table {
+            width: auto !important;
+            border-collapse: collapse !important;
+            background: white !important;
+            margin: 0 auto !important;
+        }
+    
+        th, td {
+            border: 1px solid #000000 !important;
+            padding: 0.2em !important;
+            text-align: center !important;
+            font-weight: bold !important;
+            color: black;
+        }
+    
+        th[colspan="8"], th[colspan="6"] {
+            text-align: center !important;
+            font-weight: bold !important;
+        }
+    
+        .paragraf {
+            background-color: #434343 !important;
+            color: white !important; 
+            border: none !important;
+        }
+    
+        .paragraf1 {
+            background-color: #434343 !important;
+            color: white !important;
+        }
+    
+        .wykroczenia-drogowe {
+            background-color: #b6d7a8 !important;
+            border: 3px solid #000000 !important;
+        }
+    
+        .wykroczenia-drogowe-1 {
+            background-color: #d9ead3 !important;
+        }
+    
+        .tak {
+            background-color: #93c47d !important;
+            border: 0.13em solid black !important;
+        }
+    
+        .nie {
+            background-color: #cc4125 !important;
+            border: 0.13em solid black !important;
+        }
+    
+        .licencje {
+            background-color: #f9cb9c !important;
+            border: 3px solid #000000 !important;
+        }
+    
+        .licencje1 {
+            background-color: #fce5cd !important;
+        }
+    
+        .substancje {
+            background-color: #a4c2f4 !important;
+            border: 3px solid #000000 !important;
+        }
+    
+        .substancje1 {
+            background-color: #c9daf8 !important;
+        }
+    
+        .wyjatek {
+            background-color: #e6b8af !important;
+            color: #ff0000 !important;
+        }
+    
+        .palna {
+            background-color: #999999 !important;
+            border: 3px solid #000000 !important;
+        }
+    
+        .palna1 {
+            background-color: #cccccc !important;
+        }
+    
+        .lekkie {
+            background-color: #6aa84f !important;
+            border: 3px solid #000000 !important;
+        }
+    
+        .lekkie1 {
+            background-color: #b6d7a8 !important;
+        }
+    
+        .ciezkie {
+            background-color: #dd7e6b !important;
+            border: 3px solid #000000 !important;
+        }
+    
+        .ciezkie1 {
+            background-color: #e6b8af !important;
+        }
+    
+        .ciezkie2 {
+            background-color: #dd7e6b !important;
+            border: 3px solid #000000 !important;
+            font-size: 20px !important;
+        }
+    
+        .info-button {
+        position: fixed !important;
+        top: 20px !important;
+        right: 20px !important;
+        background-color: #2243d4 !important;
+        color: #fff !important;
+        border: none !important;
+        border-radius: 50% !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 20px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+    }
+
+   
+    .alert-button {
+        position: fixed !important;
+        top: 80px !important; 
+        right: 20px !important;
+        background-color: #dc3545 !important; 
+        color: #fff !important;
+        border: none !important;
+        border-radius: 50% !important;
+        width: 50px !important;
+        height: 50px !important;
+        font-size: 20px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: pointer !important;
+    }
+
+    .alert-button:hover {
+        background-color: #c82333 !important;
+    }
+
+  
+    .modal-dark {
+        background-color: #1e1e1e;
+        color: #ddd;
+    }
+
+    .modal-content {
+        background-color: #333;
+        color: white;
+    }
+
+    .modal-header, .modal-footer {
+        border: none;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+
+    .modal-body ul, .modal-body ol {
+        margin-left: 20px;
+    }
+        .status-nie {
+        color: green;
+        font-weight: bold;
+    }
+
+    .status-tak {
+        color: red;
+        font-weight: bold;
+    }
+
+    .status-default {
+        color: black;
+    }
+    .summary {
+    display: none;
+}
+table td input[type="checkbox"] {
+    width: 20px !important; 
+    height: 20px !important; 
+}
+
+
+
+@media (max-width: 768px) {
+
+    .table-container {
+        width: 100%;
+        overflow-x: auto;  
+    }
+
+    table {
+        font-size: 12px !important; 
+        width: 100%;
+    }
+
+    th, td {
+        padding: 0.5em !important;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .table-container {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    table {
+        font-size: 10px !important; 
+    }
+}
+    </style>
+    
+
+  
+<button type="button" class="info-button" data-bs-toggle="modal" data-bs-target="#bmiModal">
+    =
+</button>
+
+<div class="modal fade" id="bmiModal" tabindex="-1" aria-labelledby="bmiModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="bmiModalLabel">Podsumowanie</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>Rejestr Karny:</strong> <span id="modalRejestrKarny"></span></p>
+                <p><strong>Wyjście za Kaucją:</strong> <span id="modalWyjscieZaKaucja"></span></p>
+                <p id="kaucjaSection" style="display: none;"><strong>Kwota do wyjścia za Kaucją:</strong> <span id="kaucjaKwota">$0</span></p>
+                <p><strong>Suma Wyroków:</strong> <span id="modalSumaWyrokow"></span></p>
+                <p><strong>Suma Kar:</strong> <span id="modalSumaKar"></span></p>
+                <p><i id="gpsMessage" style="font-weight: bold; color: #00BFFF; display: none;">Jeśli osoba nie posiada pieniędzy - załóż opaskę GPS</i></p>
+                <p><strong>Paragrafy:</strong> <span id="modalParagrafy"></span></p>
+                <div id="extraMessagesContainer"></div> 
+                <div id="prokuratorRequiredMessage" style="display:none; color:red; font-weight:bold;">Musisz wezwać prokuratora</div>
+                <p id="prokuratorMessage" style="display: none; font-weight: bold; color: red;">Musisz wezwać prokuratora</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="summary">
+    <p>Rejestr Karny: <span id="rejestrKarny" style="color: green;">NIE</span></p>
+    <p>Wyjście za Kaucją: <span id="wyjscieZaKaucja" style="color: red;">TAK</span></p>
+    <p>Suma Wyroków: <span id="sumaWyrokow">0</span></p>
+    <p>Suma Kar: <span id="sumaKar">$0</span></p>
+    <p>Paragrafy: <span id="paragrafy">Brak Art.</span></p>
+</div>
+<button type="button" class="alert-button" data-bs-toggle="modal" data-bs-target="#importantInfoModal">
+    !
+</button>
+
+<div class="modal fade" id="importantInfoModal" tabindex="-1" aria-labelledby="importantInfoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content modal-dark">
+            <div class="modal-header">
+                <h5 class="modal-title" id="importantInfoModalLabel">Ważne informacje</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h4>Przy każdym<font color="red"><b> czerwonym </b></font>przestępstwie obowiązkowo zabieramy licencję na broń.</h4>
+
+                <h5>Informacje na temat przeliczania marihuany:</h5>
+                <ul>
+                    <li>1 krzak marihuany = 10 szt saszetek</li>
+                    <li>1 nasionko marihuany = 3 krzaki = 30 szt saszetek</li>
+                    <li>Posiadanie nasionek jest kategorycznie zakazane!</li>
+                    <li>Legalna ilością marihuany to 20 szt saszetek</li>
+                </ul>
+
+                <h5><font color="#00BFFF">Opaski GPS:</font></h5>
+                <ol>
+                    <li>Zakładamy gdy zatrzymany nie ma pieniędzy na spłatę grzywny.</li>
+                    <li>Zatrzymany ma 72h na spłatę grzywny.</li>
+                    <li>Jeśli nie spłaci, wystawiamy poszukiwanie i umieszczamy w areszcie na 50 miesięcy.</li>
+                    <li>W dalszym ciągu wymagamy spłaty grzywny.</li>
+                    <li>Jeśli nie spłaci w kolejnych 72h, czynność powtarzamy od pkt 1.</li>
+                    <li>Opaskę ściągamy, gdy spłacona zostanie cała grzywna.</li>
+                    <li>Po 3-krotnym nie spłaceniu kary grzywny, wezwać adwokata bądź prokuratora w celu założenia sprawy sądowej za unikanie odpowiedzialności karnej.</li>
+                </ol>
+
+                <h5>Wyjście za kaucją:</h5>
+                <ul>
+                    <li>1 miesiąc = 2.000$ wyjścia za kaucją</li>
+                    <li>Przy wyroku 45-50 miesięcy nakładamy 125.000$ kaucji</li>
+                </ul>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zamknij</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.querySelector('.info-button').addEventListener('click', function() {
+ 
+    var paragrafy = [];
+    var allCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+    allCheckboxes.forEach(function(checkbox) {
+        if (checkbox.checked) {
+            paragrafy.push(checkbox.closest('tr').querySelector('.paragraf').textContent);
+        }
+    });
+
+   
+    var rejestrKarny = document.getElementById('rejestrKarny').textContent;
+    var wyjscieZaKaucja = document.getElementById('wyjscieZaKaucja').textContent;
+    var sumaWyrokow = parseFloat(document.getElementById('sumaWyrokow').textContent);
+    var sumaKar = parseFloat(document.getElementById('sumaKar').textContent.replace('$', '').replace(/\s+/g, ''));
+    var paragrafyText = paragrafy.join(', '); 
+
+    document.getElementById('modalRejestrKarny').textContent = rejestrKarny;
+    document.getElementById('modalWyjscieZaKaucja').textContent = wyjscieZaKaucja;
+    document.getElementById('modalSumaWyrokow').textContent = sumaWyrokow;
+    document.getElementById('modalSumaKar').textContent = `$${sumaKar.toLocaleString('pl-PL')}`;
+    document.getElementById('modalParagrafy').textContent = paragrafyText;
+
+
+    document.getElementById('modalRejestrKarny').className = rejestrKarny === 'NIE' ? 'status-nie' : 'status-tak';
+    document.getElementById('modalWyjscieZaKaucja').className = wyjscieZaKaucja === 'NIE' ? 'status-nie' : 'status-tak';
+
+
+    document.getElementById('extraMessagesContainer').innerHTML = '';
+
+    var extraMessages = [];
+
+
+    if (paragrafy.includes('D.2') || paragrafy.includes('D.3') || paragrafy.includes('D.4') || paragrafy.includes('D.6') || paragrafy.includes('D.12')) {
+        extraMessages.push('Odebranie uprawnienia do prowadzenia pojazdów');
+    }
+
+    if (paragrafy.includes('D.9') || paragrafy.includes('D.10') || paragrafy.includes('D.12')) {
+        extraMessages.push('Odholowanie pojazdu');
+    }
+
+    if (paragrafy.includes('L.1') || paragrafy.includes('L.2') || paragrafy.includes('L.3') || paragrafy.includes('L.4') || paragrafy.includes('BP.2') || paragrafy.includes('BP.4') || paragrafy.includes('LP.21') || paragrafy.includes('CP.7') || paragrafy.includes('CP.10')) {
+        extraMessages.push('Wycofanie licencji na broń/ryby');
+    }
+
+    if (paragrafy.includes('BP.1') || paragrafy.includes('BP.2') || paragrafy.includes('BP.3')) {
+        extraMessages.push('Wycofaj broń, amunicję, kamizelki');
+    }
+
+    if (paragrafy.includes('LP.11')) {
+        extraMessages.push('Wycofaj narzędzia do włamu: wiertarka, kable, programator, karta fleeca, szlifierka, dekoder itp');
+    }
+
+    if (paragrafy.includes('LP.12')) {
+        extraMessages.push('Wycofaj epinefrynę, kajdanki, defibrylator z numerami STATE, wycofany defibrylator, przeterminowany stymulator itp');
+    }
+
+    if (paragrafy.includes('NS.1')) {
+        extraMessages.push('Wycofaj nielegalne substancje. Sprawdź przelicznik marihuany');
+    }
+
+    if (paragrafy.includes('NS.2') || paragrafy.includes('NS.3') || paragrafy.includes('NS.4') || paragrafy.includes('NS.5') || paragrafy.includes('NS.6') || paragrafy.includes('NS.7') || paragrafy.includes('NS.8') || paragrafy.includes('NS.9') || paragrafy.includes('NS.10') || paragrafy.includes('NS.11') || paragrafy.includes('NS.12') || paragrafy.includes('NS.13') || paragrafy.includes('NS.14') || paragrafy.includes('NS.15') || paragrafy.includes('NS.16') || paragrafy.includes('NS.17') || paragrafy.includes('NS.18')) {
+        extraMessages.push('Wycofaj nielegalne substancje');
+    }
+
+
+    extraMessages.forEach(function(message) {
+        var p = document.createElement('p');
+        p.textContent = message;
+        p.style.color = '#6eb596'; 
+        document.getElementById('extraMessagesContainer').appendChild(p);
+    });
+
+ 
+    var paragrafyProkurator = ['CP.11', 'CP.12', 'CP.13', 'CP.14', 'CP.15', 'CP.16'];
+    var containsProkuratorParagraph = paragrafy.some(par => paragrafyProkurator.includes(par));
+
+
+    var prokuratorTriggerParagraphs = ['NS.18', 'BP.4', 'CP.4'];
+    var containsProkuratorTrigger = paragrafy.some(par => prokuratorTriggerParagraphs.includes(par));
+
+    if (containsProkuratorParagraph || containsProkuratorTrigger) {
+        document.getElementById('prokuratorMessage').style.display = 'block';
+    } else {
+        document.getElementById('prokuratorMessage').style.display = 'none';
+    }
+
+  
+    var prokuratorMessage = document.getElementById('prokuratorRequiredMessage');
+    if (sumaWyrokow > 50) {
+        prokuratorMessage.textContent = 'Musisz wezwać prokuratora'; 
+        prokuratorMessage.style.display = 'block';
+    } else {
+        prokuratorMessage.style.display = 'none'; 
+    }
+
+ 
+    if (wyjscieZaKaucja === 'TAK') {
+        var kaucjaKwota = sumaWyrokow * 2000;
+
+        if (sumaWyrokow >= 45 && sumaWyrokow <= 50) {
+            document.getElementById('kaucjaKwota').textContent = `$125 000`;
+            document.getElementById('kaucjaKwota').style.color = '#15bd23'; 
+            document.getElementById('kaucjaSection').style.display = 'block';
+        } else if (sumaWyrokow > 50) {
+            document.getElementById('kaucjaKwota').textContent = 'Kwotę ustala sąd';
+            document.getElementById('kaucjaKwota').style.color = 'red';
+            document.getElementById('kaucjaSection').style.display = 'block';
+        } else {
+            document.getElementById('kaucjaKwota').textContent = `$${kaucjaKwota.toLocaleString('pl-PL')}`;
+            document.getElementById('kaucjaKwota').style.color = '#15bd23'; 
+            document.getElementById('kaucjaSection').style.display = 'block';
+        }
+    } else {
+        document.getElementById('kaucjaSection').style.display = 'none';
+    }
+
+    var kaucjaText = document.getElementById('kaucjaKwota').textContent;
+    if (!kaucjaText.includes('$')) {
+        document.getElementById('kaucjaKwota').style.color = 'red';
+        document.getElementById('kaucjaSection').style.display = 'none';
+    }
+});
+</script>
+  <div class="table-container">
+    <table>
+    <thead>
+       <tr>
+        <th class="paragraf" style="font-size: 25px;" colspan="8">Taryfikator</th>
+       </tr>
+    </thead>
+    <tbody>
+ 
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+        <td class="paragraf1">Przestępstwa</td>
+        <td class="paragraf1">Miesiące</td>
+        <td class="paragraf1">$$$</td>
+        <td class="paragraf1">Rejestr<br> Karny</td>
+        <td class="paragraf1">Wyjście za<br> kaucją</td>
+        <td class="paragraf1">Dodatkowo/więcej informacji:</td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr>
+        <td class="paragraf"></td>
+          <td class="wykroczenia-drogowe" colspan="6">Wykroczenia drogowe </td>
+          <td class="paragraf"></td>
+       </tr>
+       <tr class="wykroczenia-drogowe-1">
+        <td class="paragraf">D.1</td>
+          <td>Brawurowa jazda / Niestosowanie się do przepisów drogowych</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$50 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="wykroczenia-drogowe-1">
+        <td class="paragraf">D.2</td>
+          <td>Niezatrzymanie pojazdu do kontroli</td>
+          <td class="wyrok">10</td>
+          <td class="kara">$50 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Odebranie uprawnień do prowadzenia pojazdów</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="wykroczenia-drogowe-1">
+        <td class="paragraf">D.3</td>
+          <td>Lądowanie statkiem powietrznym w miejscach niedozwolonych w mieście</td>
+          <td class="wyrok">10</td>
+          <td class="kara">$80 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Odebranie uprawnień do prowadzenia pojazdów</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="wykroczenia-drogowe-1">
+        <td class="paragraf">D.4</td>
+          <td>Przekroczenie limitu prędkości</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$50 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Powyżej 280km/h | każde +10km/h = +10.000$ grzywny + Odebranie uprawinień do kierowania pojazdem</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="wykroczenia-drogowe-1">
+        <td class="paragraf">D.5</td>
+          <td>Niewłaściwe parkowanie</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$10 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+          </tr><tr class="wykroczenia-drogowe-1">
+            <td class="paragraf">D.6</td>
+          <td>Jazda pod wpływem alkoholu lub innych substancji odurzających</td>
+          <td class="wyrok">15</td>
+          <td class="kara">$55 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Odebranie uprawnień do prowadzenia pojazdów</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="wykroczenia-drogowe-1">
+        <td class="paragraf">D.7</td>
+          <td>Spowodowanie kolizji/wypadku</td>
+          <td class="wyrok">15</td>
+          <td class="kara">$50 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Funkcjonariusz decyduje o wycofaniu uprawnień do kierowania pojazdem</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="wykroczenia-drogowe-1">
+        <td class="paragraf">D.8</td>
+          <td>Poruszanie się pojazdem silnikowym bez uprawnień</td>
+          <td class="wyrok">15</td>
+          <td class="kara">$30 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="wykroczenia-drogowe-1">
+        <td class="paragraf">D.9</td>
+          <td>Zły stan techniczny pojazdu</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$20 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Odholowanie pojazdu</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="wykroczenia-drogowe-1">
+        <td class="paragraf">D.10</td>
+          <td>Poruszanie się niezarejestrowanym pojazdem lub bez tablic rejestracyjnych</td>
+          <td class="wyrok">10</td>
+          <td class="kara">$50 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Odholowanie pojazdu</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="wykroczenia-drogowe-1">
+        <td class="paragraf">D.11</td>
+          <td>Organizacja nielegalnego wydarzenia/eventu </td>
+          <td class="wyrok">20</td>
+          <td class="kara">$50 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Event gdzie przebywa więcej niż 10 osób lub powyżej 5 aut</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="wykroczenia-drogowe-1">
+        <td class="paragraf">D.12</td>
+          <td>Utrudnianie pracy pojazdami mechanicznymi</td>
+          <td class="wyrok">20</td>
+          <td class="kara">$50 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Odebranie uprawnień do prowadzenia pojazdów + odholowanie pojazdu</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="wykroczenia-drogowe-1">
+        <td class="paragraf">D.13</td>
+          <td>Uczestnictwo w nielegalnym wydarzeniu</td>
+          <td class="wyrok">10</td>
+          <td class="kara">$15 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+        <td class="paragraf" colspan="6">&nbsp;</td>
+        <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+          <td class="licencje" colspan="6">Licencje</td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr class="licencje1">
+        <td class="paragraf">L.1</td>
+          <td>Przedawnione badania lekarskie gdy obywatel posiada licencję na broń</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$50 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>Odebranie licencji na broń (powyżej 24h)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="licencje1">
+        <td class="paragraf">L.2</td>
+          <td>Posiadanie podrobionych dokumentów </td>
+          <td class="wyrok">40</td>
+          <td class="kara">$100 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td rowspan="2">Np. połów ryb</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="licencje1">
+        <td class="paragraf">L.3</td>
+          <td>Nieposiadanie licencji, która upoważnia cię do wykonania danego czynu</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$15 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="licencje1">
+        <td class="paragraf">L.4</td>
+          <td>Brak badań lekarskich podczas posiadania broni oraz licencji na broń</td>
+          <td class="wyrok">30</td>
+          <td class="kara">$60 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Odebranie licencji na broń</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+        <td class="paragraf" colspan="6">&nbsp;</td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+          <td class="substancje" colspan="6">Przestępstwa związane z nielegalnymi substancjami</td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.1</td>
+          <td>Posiadanie nasionek marihuany</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$20 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>(Jeżeli powyżej 1 szt przeliczyć według wzoru)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.2</td>
+          <td rowspan="3">Posiadanie zbyt dużej ilości marihuany</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$25 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>(21 - 50 saszetek marihuany)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.3</td>
+        <td class="wyrok">15</td>
+        <td class="kara">$30 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>(51- 70 saszetek marihuany)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.4</td>
+        <td class="wyrok">25</td>
+        <td class="kara">$40 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>(71 - 99 saszetek marihuany</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.5</td>
+          <td>Posiadanie hurtowej ilości marihuany</td>
+          <td class="wyrok">50</td>
+          <td class="kara">$80 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="nie kaucja">TAK</td>
+          <td>(powyżej 100 saszetek marihuany)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.6</td>
+          <td rowspan="3">Posiadanie metaamfetaminy</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$25 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>( poniżej 15 saszetek metaamfetaminy)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.7</td>
+        <td class="wyrok">10</td>
+        <td class="kara">$30 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>(15 - 24 saszetek metaamfetaminy)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.8</td>
+        <td class="wyrok">20</td>
+        <td class="kara">$40 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td> (25 - 49 saszetek metaamfetaminy)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.9</td>
+          <td>Posiadanie hurtowej ilości metaamfetaminy</td>
+          <td class="wyrok">50</td>
+          <td class="kara">$80 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>(powyżej 50 saszetek metaamfetaminy)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.10</td>
+          <td rowspan="3">Posiadanie amfetaminy</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$25 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>( poniżej 15 saszetek amfetaminy)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.11</td>
+        <td class="wyrok">10</td>
+        <td class="kara">$30 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>(15 - 24 saszetek amfetaminy</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.12</td>
+        <td class="wyrok">20</td>
+        <td class="kara">$40 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td> (25 - 49 saszetek amfetaminy)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.13</td>
+          <td>Posiadanie hurtowej ilości amfetaminy</td>
+          <td class="wyrok">50</td>
+          <td class="kara">$80 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>(powyżej 50 saszetek amfetaminy)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.14</td>
+          <td rowspan="3">Posiadanie zbyt dużej ilości ekstazy</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$25 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>( poniżej 15 saszetek ekstazy)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.15</td>
+        <td class="wyrok">10</td>
+        <td class="kara">$30 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>(15 - 24 saszetek ekstazy)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.16</td>
+        <td class="wyrok">20</td>
+        <td class="kara">$40 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td> (25 - 49 saszetek ekstazy)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="substancje1">
+        <td class="paragraf">NS.17</td>
+          <td>Posiadanie hurtowej ilości ekstazy</td>
+          <td class="wyrok">50</td>
+          <td class="kara">$80 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>(powyżej 50 saszetek ekstazy)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="wyjatek">
+        <td class="paragraf">NS.18</td>
+          <td class="wyjatek">Handel narkotykami</td>
+          <td class="wyrok wyjatek">-</td>
+          <td class="kara wyjatek">-</td>
+          <td class="nie rejestr" style="color: black;">TAK</td>
+          <td class="tak kaucja" style="color: black;">NIE</td>
+          <td class="wyjatek">Konfiskata, zlożenie sprawy do prokuratury + wyrok sądowy</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+          <td class="paragraf" colspan="6">&nbsp;</td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+          <td class="palna" colspan="6">Broń palna</td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr class="palna1">
+        <td class="paragraf">BP.1</td>
+          <td>Posiadanie broni bez licencji </td>
+          <td class="wyrok">20</td>
+          <td class="kara">$90 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>Wycofanie broni oraz amunicji</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="palna1">
+        <td class="paragraf">BP.2</td>
+          <td>Posiadanie nielegalnej broni/niedostępnej w gunshopie </td>
+          <td class="wyrok">30</td>
+          <td class="kara">$120 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>Konfiskata lub wycofanie broni oraz amunicji (wycofanie licencji na broń)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="palna1">
+        <td class="paragraf">BP.3</td>
+          <td>Posiadanie amunicji/kamizelek bez licencji na broń</td>
+          <td class="wyrok">10</td>
+          <td class="kara">$50 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Konfiskata amunicji</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="wyjatek">
+        <td class="paragraf">BP.4</td>
+          <td class="wyjatek">Handel bronią lub osprzętem oraz nielegalnymi przedmiotami</td>
+          <td class="wyrok wyjatek">-</td>
+          <td class="kara wyjatek">-</td>
+          <td class="nie rejestr" style="color: black;">TAK</td>
+          <td class="tak kaucja" style="color: black;">NIE</td>
+          <td class="wyjatek">Konfiskata, zlożenie sprawy do prokuratury + wyrok sądowy</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+        <td class="paragraf" colspan="6">&nbsp;</td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+          <td class="lekkie" colspan="6">Lekkie przestępstwa</td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.1</td>
+          <td>Ucieczka przed funkcjonariuszem państwowym</td>
+          <td class="wyrok">20</td>
+          <td class="kara">$50 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.2</td>
+          <td>Niestosowanie się do poleceń funkcjonariusza państwowego</td>
+          <td class="wyrok">15</td>
+          <td class="kara">$30 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>W zależności od dokonanego czynu można zrezygnować z wyroku więzienia</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.3</td>
+          <td>Zaśmiecanie miejsca publicznego</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$25 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>np. wyrzucanie boomboxów na ziemie / wyrzucanie ubrań</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.4</td>
+          <td>Utrudnianie pracy służbom porządkowym</td>
+          <td class="wyrok">20</td>
+          <td class="kara">$30 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="tak kaucja">NIE</td>
+          <td>FIB/LSPD/SANG/LSCSD/GOV | Brak kaucji zależne od sytuacji</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.5</td>
+          <td>Obraza funkcjonariusza państwowego</td>
+          <td class="wyrok">5</td>
+          <td class="kara">$10 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.6</td>
+          <td>Wielokrotna Obraza funkcjonariusza państwowego</td>
+          <td class="wyrok">15</td>
+          <td class="kara">$50 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="tak kaucja">NIE</td>
+          <td>Powyżej 5 wyzwisk</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.7</td>
+          <td>Obnażanie się w miejscu poblicznym</td>
+          <td class="wyrok">10</td>
+          <td class="kara">$50 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.8</td>
+          <td>Wtargnięcie na teren prywatny</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$15 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.9</td>
+          <td>Palenie na terenach frakcji państwowych</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$30 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>FIB/LSPD/SANG/LSSD/GOV/EMS/WN</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.10</td>
+          <td>Wtargnięcie na teren państwowy lub w miejsca nie przeznaczone dla cywili</td>
+          <td class="wyrok">30</td>
+          <td class="kara">$120 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="tak kaucja">NIE</td>
+          <td>FIB/LSPD/SANG/LSSD/GOV/EMS/WN</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.11</td>
+          <td>Posiadanie narzędzi do włamu </td>
+          <td class="wyrok">15</td>
+          <td class="kara">$20 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Np. wiertarka, kabelki i programator, karta fleeca, szlifierka, dekoder</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.12</td>
+          <td>Posiadanie nielegalnych przedmiotów</td>
+          <td class="wyrok">20</td>
+          <td class="kara">$20 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Np. Epinefryna/Kajdanki (Adrenalina i Defibrylator bez nr STATE są legalne)</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.13</td>
+          <td>Składanie fałszywych zeznań</td>
+          <td class="wyrok">20</td>
+          <td class="kara">$15 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.14</td>
+          <td>Próba przekupstwa</td>
+          <td class="wyrok">10</td>
+          <td class="kara">$20 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.15</td>
+          <td>Kradzież pojazdu / Próba kradzieży pojazdu STATE </td>
+          <td class="wyrok">45</td>
+          <td class="kara">$100 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.16</td>
+          <td>Kradzież pojazdu / Próba kradzieży pojazdu</td>
+          <td class="wyrok">25</td>
+          <td class="kara">$40 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.17</td>
+          <td>Napaść na cywila </td>
+          <td class="wyrok">20</td>
+          <td class="kara">$30 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.18</td>
+          <td>Groźby karalne </td>
+          <td class="wyrok">20</td>
+          <td class="kara">$25 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.19</td>
+          <td>Podszywanie sie pod personel frakcji państwowych</td>
+          <td class="wyrok">25</td>
+          <td class="kara">$50 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="nie kaucja">TAK</td>
+          <td>FIB/LSPD/SANG/LSSD/GOV/EMS/WN</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.20</td>
+          <td>Zakrywanie twarzy w miejscu publicznym</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$5 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Jeżeli obywatel nie chce zdjąć, może zostać zatrzymany</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.21</td>
+          <td>Noszenie broni na widoku w przestrzeni publicznej</td>
+          <td class="wyrok">20</td>
+          <td class="kara">$50 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Odebranie licencji na broń</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.22</td>
+          <td>Wtargnięcie na teren Fortu Zancudo </td>
+          <td class="wyrok">50</td>
+          <td class="kara">$150 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.23</td>
+          <td>Niszczenie mienia prywatnego</td>
+          <td class="wyrok">5</td>
+          <td class="kara">$15 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.24</td>
+          <td>Niszczenie mienia publicznego </td>
+          <td class="wyrok">10</td>
+          <td class="kara">$20 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.25</td>
+          <td>Nękanie </td>
+          <td class="wyrok">20</td>
+          <td class="kara">$75 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.26</td>
+          <td>Utrudnianie pracy służbom medycznym / Weazle News</td>
+          <td class="wyrok">30</td>
+          <td class="kara">$100 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="tak kaucja">NIE</td>
+          <td>FIB/LSPD/SANG/LSSD/GOV/EMS/WN</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.27</td>
+          <td>Gry hazardowe w miejscach publicznych</td>
+          <td class="wyrok">20</td>
+          <td class="kara">$35 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>Siedziby frakcji państwowych / Weazle News</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.28</td>
+          <td>Napaść na funkcjonariusza państwowego </td>
+          <td class="wyrok">30</td>
+          <td class="kara">$40 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="lekkie1">
+        <td class="paragraf">LP.29</td>
+          <td>Odmowa weryfikacji tożsamości</td>
+          <td class="wyrok">0</td>
+          <td class="kara">$10 000</td>
+          <td class="tak rejestr">NIE</td>
+          <td class="nie kaucja">TAK</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+        <td class="paragraf" colspan="6">&nbsp;</td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+          <td class="ciezkie" colspan="6">Ciężkie przestępstwa </td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr class="ciezkie1">
+        <td class="paragraf">CP.1</td>
+          <td>Porwanie lub Uprowadzenie / Próba Porwania lub Uprowadzenia</td>
+          <td class="wyrok">50</td>
+          <td class="kara">$200 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="ciezkie1">
+        <td class="paragraf">CP.2</td>
+          <td>Porwanie przedstawiciela Frakcji Państwowych</td>
+          <td class="wyrok">50</td>
+          <td class="kara">$500 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="ciezkie1">
+        <td class="paragraf">CP.3</td>
+          <td>Napad na Bank</td>
+          <td class="wyrok">50</td>
+          <td class="kara">$150 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="ciezkie1">
+        <td class="paragraf">CP.4</td>
+          <td>Napad na Fort Zancudo / Instytucje państwowe</td>
+          <td class="wyrok">50</td>
+          <td class="kara">$200 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td style="color: #ff0000;">Wyrok ustala sąd / obowiązkowo wzywamy prokuratora</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="ciezkie1">
+        <td class="paragraf">CP.5</td>
+          <td>Napad na konwój służb państwowych</td>
+          <td class="wyrok">50</td>
+          <td class="kara">$250 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="ciezkie1">
+        <td class="paragraf">CP.6</td>
+          <td>Napad na Biznes</td>
+          <td class="wyrok">40</td>
+          <td class="kara">$150 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="ciezkie1">
+        <td class="paragraf">CP.7</td>
+          <td>Posiadanie podrobionych dokumentów</td>
+          <td class="wyrok">50</td>
+          <td class="kara">$250 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>Wycofanie podrobionych dokumentów/licencji</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="ciezkie1">
+        <td class="paragraf">CP.8</td>
+          <td>Współudział w napadzie</td>
+          <td class="wyrok">30</td>
+          <td class="kara">$150 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>Np. Podstawiony zakładnik, przeszkadzanie FP podczas napadu</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="ciezkie1">
+        <td class="paragraf">CP.9</td>
+          <td>Udział w strzelaninie</td>
+          <td class="wyrok">35</td>
+          <td class="kara">$150 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>-</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+       <tr class="ciezkie1">
+        <td class="paragraf">CP.10</td>
+          <td>Usiłowanie zabójstwa</td>
+          <td class="wyrok">50</td>
+          <td class="kara">$200 000</td>
+          <td class="nie rejestr">TAK</td>
+          <td class="tak kaucja">NIE</td>
+          <td>Odebranie licencji na broń</td>
+          <td class="paragraf"><input type="checkbox"></td>
+       </tr>
+    <tr class="ciezkie1">
+        <td class="paragraf">CP.11</td>
+        <td>Korupcja</td>
+        <td style="color: #ff0000" rowspan="6" colspan="5">Wyrok ustala sąd, obowiązkowo zgłaszamy do prokuratury</td>
+        <td class="paragraf"><input type="checkbox" id="cp11"></td>
+    </tr>
+    <tr class="ciezkie1">
+        <td class="paragraf">CP.12</td>
+        <td>Doprowadzenie do BW (Brutalnie Ranny)</td>
+        <td class="paragraf"><input type="checkbox" id="cp12"></td>
+    </tr>
+    <tr class="ciezkie1">
+        <td class="paragraf">CP.13</td>
+        <td>Przynależność do organizacji przestępczej</td>
+        <td class="paragraf"><input type="checkbox" id="cp13"></td>
+    </tr>
+    <tr class="ciezkie1">
+        <td class="paragraf">CP.14</td>
+        <td>Udział w organizacji terorrystycznej</td>
+        <td class="paragraf"><input type="checkbox" id="cp14"></td>
+    </tr>
+    <tr class="ciezkie1">
+        <td class="paragraf">CP.15</td>
+        <td>Porwanie członka zarządu frakcji państwowej</td>
+        <td class="paragraf"><input type="checkbox" id="cp15"></td>
+    </tr>
+    <tr class="ciezkie1">
+        <td class="paragraf">CP.16</td>
+        <td>Akty Terrorystyczne</td>
+        <td class="paragraf"><input type="checkbox" id="cp16"></td>
+    </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+        <td class="paragraf" colspan="6">&nbsp;</td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+          <td class="ciezkie2" rowspan="2" colspan="6">Sędzia oraz Prokurator może wydawać wyroki niezawarte w taryfikatorze lub zmienić wymiar kary.</td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+        <td class="paragraf" colspan="6">&nbsp;</td>
+
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+        <td class="paragraf" colspan="6">&nbsp;</td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+        <td class="paragraf" colspan="6">&nbsp;</td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       <tr>
+        <td class="paragraf">&nbsp;</td>
+        <td class="paragraf" colspan="6">&nbsp;</td>
+          <td class="paragraf">&nbsp;</td>
+       </tr>
+       
+   
+    </tbody>
+ </table>
+
+
+<script>
+function updateTableSummary() {
+  const table = document.querySelector("table");
+  const rows = table.querySelectorAll("tbody tr");
+
+  let rejestrKarny = "NIE";
+  let sumaWyrokow = 0;
+  let sumaKar = 0;
+  let paragrafy = [];
+  let kaucjaTakCount = 0; 
+  let kaucjaNieCount = 0; 
+
+  rows.forEach(row => {
+    const checkbox = row.querySelector("input[type='checkbox']");
+    if (checkbox && checkbox.checked) {
+      const rejestr = row.querySelector(".rejestr").textContent.trim();
+      const kaucja = row.querySelector(".kaucja").textContent.trim();
+      const wyrok = parseFloat(row.querySelector(".wyrok").textContent.trim()) || 0;
+      const karaText = row.querySelector(".kara").textContent.trim().replace('$', '').replace(/\s+/g, '');
+      const kara = parseFloat(karaText) || 0;
+      const paragraf = row.querySelector(".paragraf").textContent.trim();
+
+      if (rejestr === "TAK") rejestrKarny = "TAK";
+    
+      if (kaucja === "TAK") kaucjaTakCount++;
+      else if (kaucja === "NIE") kaucjaNieCount++;
+
+      sumaWyrokow += wyrok;
+      sumaKar += kara;
+      if (paragraf) paragrafy.push(paragraf);
+    }
+  });
+
+  const wyjscieZaKaucja = kaucjaNieCount > 0 ? "NIE" : "TAK";
+
+  const formatWithSpaces = (value) => value.toLocaleString('pl-PL');
+
+  const rejestrKarnyElement = document.querySelector("#rejestrKarny");
+  const wyjscieZaKaucjaElement = document.querySelector("#wyjscieZaKaucja");
+
+  rejestrKarnyElement.textContent = rejestrKarny;
+  wyjscieZaKaucjaElement.textContent = wyjscieZaKaucja;
+  document.querySelector("#sumaWyrokow").textContent = sumaWyrokow;
+  document.querySelector("#sumaKar").textContent = `$${formatWithSpaces(sumaKar)}`;
+  document.querySelector("#paragrafy").textContent = paragrafy.length > 0 ? paragrafy.join(", ") : "Brak Art.";
+
+  if (rejestrKarny === "TAK") {
+    rejestrKarnyElement.style.color = "red";
+  } else {
+    rejestrKarnyElement.style.color = "green";
+  }
+
+  if (wyjscieZaKaucja === "TAK") {
+    wyjscieZaKaucjaElement.style.color = "red";
+  } else {
+    wyjscieZaKaucjaElement.style.color = "green";
+  }
+}
+
+
+document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
+  checkbox.addEventListener("change", updateTableSummary);
+});
+
+
+document.addEventListener("DOMContentLoaded", updateTableSummary);
+</script>
+
+  
+  
+
+
+
+</div></body><app-ls-content ng-version="17.3.7"></app-ls-content></html>

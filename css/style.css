@@ -1,0 +1,248 @@
+:root{
+    --main-color: #786048;
+    --sub-color: #544434;
+}
+body {
+    background-color: #121212;
+    color: #fff;
+    margin-top: 10px;
+}
+.sidebar {
+    background-color: var(--main-color);
+    position: fixed;
+    top: 5px;
+    left: 10px;
+    height: calc(100vh - 10px);
+    width: 250px;
+    padding-top: 20px;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidebar .nav-link {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+.sidebar .nav-link:hover {
+    background-color: var(--sub-color);
+}
+.content {
+    margin-left: 270px;
+    padding: 20px;
+}
+.collapse:not(.show) {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.4s ease;
+}
+.collapse.show {
+    height: auto;
+    transition: height 0.4s ease;
+}
+.sidebar-hidden {
+    transform: translateX(-260px);
+}
+.navbar-toggler {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+    background: none;
+    border: none;
+    outline: none;
+}
+.navbar-toggler-icon-container {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+.material-icons {
+    transition: transform 0.3s ease;
+}
+.arrow-right {
+    transform: rotate(0deg);
+}
+.arrow-left {
+    transform: rotate(180deg);
+}
+
+.title{
+    text-align: center;
+}
+.logout-icon{
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    border-radius: 10px;
+}
+.burger{
+    position: fixed;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+.logo{
+    position: relative;
+    left: 30px;
+    top: 20px;
+}
+.collapse-inner{
+    margin-left: 10px;
+}
+body {
+    background-color: #121212;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.sidebar {
+    background-color: var(--main-color);
+    position: fixed;
+    top: 5px;
+    left: 10px;
+    height: calc(100vh - 10px);
+    width: 250px;
+    padding-top: 20px;
+    z-index: 1000;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sidebar .nav-link {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar .nav-link i {
+    margin-right: 10px;
+}
+
+.sidebar .nav-link:hover {
+    background-color: var(--sub-color);
+}
+
+.content {
+    margin-left: 270px;
+    padding: 20px;
+}
+
+.collapse-inner {
+    display: none;
+    margin-left: 20px;
+}
+
+.submenu-arrow {
+    transition: transform 0.3s ease;
+}
+
+.hidden {
+    transform: translateX(-260px);
+    transition: transform 0.3s ease;
+}
+
+.burger {
+    position: fixed;
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    z-index: 1000;
+
+}
+.toggle-sidebar-btn{
+    cursor: pointer;
+    position: absolute;
+    right: -15px;
+    z-index: 1000;
+}
+.logout-menu {
+    background-color: var(--main-color);
+    border-radius: 5px;
+    bottom: calc(100% + 10px);
+    right: 0;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    padding: 10px 0;
+}
+
+
+.logout-menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.logout-menu a:hover {
+    background-color: var(--sub-color);
+}
+
+.logout-btn {
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    width: calc(100% - 20px); 
+    border-radius: 5px;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.logout-btn a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logout-btn a i {
+    margin-right: 10px;
+}
+.toggle-logout-menu {
+    background-color: var(--sub-color);
+    border-radius: 10px;
+    padding: 8px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .hidden {
+        transform: translateX(-260px) !important;
+    }
+    .sidebar {
+        transform: translateX(0);
+    }
+    .content {
+        margin-left: 0;
+    }
+    .logout-btn {
+        margin-bottom: 20px;
+        padding: 10px 20px;
+        width: calc(100% - 20px); 
+        border-radius: 5px;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
